@@ -17,7 +17,7 @@ var server = http.createServer(function (request, response) {
   } else if (request.url === '/cuteness') {
     response.end(
       '<h1>Cuteness</h1>' +
-      '<img src="http://www.awesomelycute.com/gallery/2011/09/awesomely-cute-animals-335.jpg alt="meditating turtle">' +
+      '<img src="http://www.awesomelycute.com/gallery/2011/09/awesomely-cute-animals-335.jpg" alt="meditating turtle">' +
       '<a href="/">I wanna go home</a>'
     )
   } else {
