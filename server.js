@@ -1,8 +1,6 @@
 // Require Node's http module and assign it to a variable
 var http = require('http')
 
-var randomNumber = Math.Random()
-
 // Create a new server that just says "Hi!!" at every route
 var server = http.createServer(function (request, response) {
   if (request.url === '/') {
@@ -19,7 +17,7 @@ var server = http.createServer(function (request, response) {
   } else if (request.url === '/cuteness') {
     response.end(
       '<h1>Cuteness</h1>' +
-      '<img src=http://www.awesomelycute.com/gallery/2011/09/awesomely-cute-animals-335.jpg alt="meditating turtle">' +
+      '<img src="http://www.awesomelycute.com/gallery/2011/09/awesomely-cute-animals-335.jpg alt="meditating turtle">' +
       '<a href="/">I wanna go home</a>'
     )
   } else {
