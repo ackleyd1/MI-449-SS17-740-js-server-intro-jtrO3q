@@ -19,7 +19,11 @@ var server = http.createServer(function (request, response) {
   if (request.url === '/') {
     response.end(
       '<h1>Home</h1>' +
-      '<p>Greetings Web Adventurer!</p>'
+      '<p>Greetings Web Adventurer!</p>' +
+      '<ul>' +
+      '<li><a href="/random-joke">Random Joke</a></li>' +
+      '<li><a href="/cuteness">Cuteness</a></li>' +
+      '</ul>'
     )
   } else if (request.url === '/random-joke') {
     response.end(
