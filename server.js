@@ -1,16 +1,20 @@
 // Require Node's http module and assign it to a variable
 var http = require('http')
+
+// array of jokes to use based off of the number from getRandom
 var jokes = [
   'Knock Knock<br> Who\'s there?<br> Old lady<br> Old lady who?<br> Wow I didn\'t know you could yodel.',
   'Knock Knock<br> Who\'s there?<br> Doris!<br> Doris who?<br> Doris locked that\'s why I am knocking!',
   'Knock Knock!<br> Who\'s there?<br> Yah!<br> Yah who?<br> Naaah, bro, I prefer google.',
   'Voldemort: Knock Knock<br> Harry Potter: Who\'s There?<br> Voldemort: You Know.<br> Harry Potter: You Know Who?<br> Voldemort: Exactly!']
 
+// Our function that will generate a random number between 0 and 3 inclusive
 var getRandom = function () {
   var randomfloat = Math.random()
   return Math.round(randomfloat * (3))
 }
-// Create a new server that just says "Hi!!" at every route
+
+// Create a new server per project guidelines
 var server = http.createServer(function (request, response) {
   if (request.url === '/') {
     response.end(
@@ -38,8 +42,7 @@ var server = http.createServer(function (request, response) {
   }
 })
 
-// Listen on port 8080, so that we can reach the app at
-// localhost:8080
+// Listen on Heroku port or port 8080, so that we can reach the app on heroku and localhost:8080
 var port = process.env.PORT || 8080
 server.listen(port)
 
